@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'TTBold';
+  src: url('../public/fonts/TT Firs Neue Trial Bold.woff') format('woff'),
+    url('../public/fonts/TT Firs Neue Trial Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TTLight';
+  src: url('../public/fonts/TT Firs Neue Trial Light.woff') format('woff'),
+    url('../public/fonts/TT Firs Neue Trial Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TTMedium';
+  src: url('../public/fonts/TT Firs Neue Trial Medium.woff') format('woff'),
+    url('../public/fonts/TT Firs Neue Trial Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TTRegular';
+  src: url('../public/fonts/TT Firs Neue Trial Regular.woff') format('woff'),
+    url('../public/fonts/TT Firs Neue Trial Regular.woff') format('woff');
+}
+
+* {
+
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none !important;
+  /* IE and Edge */
+  scrollbar-width: none !important;
+  /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeInOut {
+  animation: fadeIn 1s ease-in, fadeOut 1s 2s ease-out;
+  /* 1s duration for fade-in, 2s delay before fade-out starts, and 1s duration for fade-out */
+}
+
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+*,
+body {
+  font-family: "TTRegular" !important;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+
+.message-box {
+  border-radius: 12.746px;
+  border: 0.85px solid #FCB72A;
+  background: rgba(0, 0, 0, 0.83);
+  backdrop-filter: blur(6.373093605041504px);
+}
+
+.daily {
+  border-radius: 12.746px;
+  border: 0.85px solid #00FF85;
+  background: rgba(0, 0, 0, 0.83);
+  box-shadow: 0px 4px 35px 0px #00ff8467;
+  backdrop-filter: blur(6.373093605041504px);
+}
+
+.ttbold {
+  font-family: "TTbold" !important;
+}
+
+.login-wallet .wallet-adapter-button {
+  background-color: #000 !important;
+  border: none;
+  color: #fff;
+  border: 2px solid #555555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 54px;
+  border-radius: 4px;
+}
+
+.login-wallet .wallet-adapter-button:hover {
+  opacity: 80% !important;
+  background-color: #000 !important;
+  border: none;
+  color: #fff;
+  border: 1px solid #555555 !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 54px;
+  border-radius: 4px;
+}
+
+.wallet-adapter-dropdown-list {
+  background: rgba(0, 0, 0, 0.383) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+  border: 1px solid #555555 !important;
+  width: 100%;
+}
+
+.black-glass {
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.71);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.circleyellow {
+  border-radius: 1128px;
+  background: #FCB72A;
+
+  filter: blur(277.5px);
+}
+
+.circlered {
+  border-radius: 1128px;
+  background: #FF0046;
+
+  filter: blur(277.5px);
+}

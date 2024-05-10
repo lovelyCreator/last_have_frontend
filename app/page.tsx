@@ -72,7 +72,7 @@ export default function Home() {
   const [unreadMessage, setUnreadMessage] = useState(0);
   const [username, setUserName] = useState('');
   const [alert, setAlert] = useState(0);
-  const socket = io('https://last-haven-server.onrender.com/');
+  const socket = io('https://web-camxq60inzhu.up-fi-hel1-k8s-1.apps.run-on-seenode.com/');
   const avatarUrl = profilePic !== "" && "https://cdn.hellomoon.io/public/marius/" + profilePic + ".png"
 
   useEffect(() => {
@@ -359,7 +359,7 @@ export default function Home() {
   const handleChatClick = async () => {
     socket.emit('wallet', { walletAddress: publicKey?.toBase58() })
     try {
-      const response = await axios.post('https://last-haven-server.onrender.com/api/chat/wallet', { walletAddress: publicKey?.toBase58() });
+      const response = await axios.post('https://web-camxq60inzhu.up-fi-hel1-k8s-1.apps.run-on-seenode.com/api/chat/wallet', { walletAddress: publicKey?.toBase58() });
       if (response.data.isWalletLogin === 'true') {
         setIsLogin(true);
         const user = response.data.username

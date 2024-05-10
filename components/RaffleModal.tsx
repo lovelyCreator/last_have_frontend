@@ -78,7 +78,7 @@ export default function RaffleModal({
   };
   const sendRazeToken = async () => {
     setBuyLoad(true);
-    const data = await axios.post("https://last-haven-server.onrender.com/api/buyTicketInfo/getInvaild")
+    const data = await axios.post("https://web-camxq60inzhu.up-fi-hel1-k8s-1.apps.run-on-seenode.com/api/buyTicketInfo/getInvaild")
     if (data.data == "expired") {
       toast.error("Raffle ended")
     } else {
@@ -129,7 +129,7 @@ export default function RaffleModal({
     }
   }
   const getCurrentTokens = async () => {
-    const response = await axios.post("https://last-haven-server.onrender.com/api/buyTicketInfo/getTokens", { address: publicKey?.toBase58() })
+    const response = await axios.post("https://web-camxq60inzhu.up-fi-hel1-k8s-1.apps.run-on-seenode.com/api/buyTicketInfo/getTokens", { address: publicKey?.toBase58() })
     setCurrentTokens(response.data.total)
   }
   const sendTransactionResult = async () => {
@@ -139,13 +139,13 @@ export default function RaffleModal({
       publicKey: publicKey?.toBase58(),
       nickName: nickName
     }
-    const response = await axios.post("https://last-haven-server.onrender.com/api/buyTicketInfo/create", data)
+    const response = await axios.post("https://web-camxq60inzhu.up-fi-hel1-k8s-1.apps.run-on-seenode.com/api/buyTicketInfo/create", data)
     setCurrentTokens(response.data.total)
     toast.success("Success")
     setConfirm(false)
   }
   const getEndedTime = async () => {
-    const response = await axios.post("https://last-haven-server.onrender.com/api/ticket/getTicketInfo");
+    const response = await axios.post("https://web-camxq60inzhu.up-fi-hel1-k8s-1.apps.run-on-seenode.com/api/ticket/getTicketInfo");
     const targetTime = new Date(`${response.data.deadline}:00`);
     setImage(response.data.image);
     setName(response.data.ticketName);
@@ -156,7 +156,7 @@ export default function RaffleModal({
     setRestTime(localDate);
   }
   const getTickets = async () => {
-    const response = await axios.post("https://last-haven-server.onrender.com/api/buyTicketInfo/purchasedTickets");
+    const response = await axios.post("https://web-camxq60inzhu.up-fi-hel1-k8s-1.apps.run-on-seenode.com/api/buyTicketInfo/purchasedTickets");
     setPurchasedTickets(response.data);
   }
   useEffect(() => {

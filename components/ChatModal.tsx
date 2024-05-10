@@ -57,7 +57,7 @@ export default function ChatModal({
   const [status, setStatus] = useState<"initial" | "uploading" | "success" | "fail">("initial");
   const { publicKey, signTransaction, sendTransaction } = useWallet();
   let count = 0;
-  const server_url = "https://last-haven-server.onrender.com/";
+  const server_url = "https://web-camxq60inzhu.up-fi-hel1-k8s-1.apps.run-on-seenode.com/";
   
   const handleFileChange = (e: any) => {
     console.log("file: ", e.target.files[0])
@@ -97,7 +97,7 @@ export default function ChatModal({
       socket.emit('logout', {username: userName, logined: false})}
   },[open]);
  
-  const socket = io('https://last-haven-server.onrender.com/');
+  const socket = io('https://web-camxq60inzhu.up-fi-hel1-k8s-1.apps.run-on-seenode.com/');
 
   useEffect(() => {
 
